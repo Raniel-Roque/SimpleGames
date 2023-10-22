@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19ECB4AC-5B59-4021-94DB-36DAB9A0DE49}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SimpleGames.My.MyApplication</StartupObject>
+    <RootNamespace>SimpleGames</RootNamespace>
+    <AssemblyName>SimpleGames</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SimpleGames.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SimpleGames.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCash.Designer.vb">
+      <DependentUpon>AddCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseGame.Designer.vb">
+      <DependentUpon>ChooseGame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseGame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CToss.Designer.vb">
+      <DependentUpon>CToss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CToss.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalData.vb" />
+    <Compile Include="Lottery.Designer.vb">
+      <DependentUpon>Lottery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lottery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lucky9.Designer.vb">
+      <DependentUpon>Lucky9.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lucky9.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddCash.resx">
+      <DependentUpon>AddCash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseGame.resx">
+      <DependentUpon>ChooseGame.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CToss.resx">
+      <DependentUpon>CToss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lottery.resx">
+      <DependentUpon>Lottery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lucky9.resx">
+      <DependentUpon>Lucky9.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17f7090ce8d37a72d898f9eda9ce4186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\61578686d50e9c157bfe6ebb_PRF Lucky 9_Final Logo_100121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sonic 4 OST - Casino Street Zone Act 1 %2816-bit Remix%29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Casino Main.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixel-art-slot-machine-casino-and-betting-machine-icon-for-8bit-game-on-white-background-vector-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coin_Flip-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart-transparent-library-symbol-animation-bureaucrat-blank-slot-machine-png-721x347-png-download-pngkit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart-transparent-library-symbol-animation-bureaucrat-blank-slot-machine-png-721x347-png-download-pngkit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8ad72b544b53900c41f0997f577012e0-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7b4b2c2308e90e7-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2ef076a0f806ee379fec0aba5e3c4456-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5b4b12e1e64c7264fa72a0922da0507e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f99be9c23fed618c4a6482c2a2b830bc-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jackpot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Win.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lose.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinFlip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heads.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CToss Suspense.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinStartFlip.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1218354508-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1218354508-612x612-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_spades_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_clubs_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_diamonds_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_hearts_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_blue_basic_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TiedGame.wav" />
+    <None Include="Resources\CardFlip.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThinkingLucky9.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
