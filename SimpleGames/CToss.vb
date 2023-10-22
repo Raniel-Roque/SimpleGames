@@ -1,6 +1,8 @@
 ﻿Imports System.Threading
-
 Public Class CToss
+    'Programmer: Raniel Christian Roque
+    'BSIT - 2A
+    'Date: October 22 2023
     Dim Choose_Game_Main As ChooseGame
     Dim FinalFace As Integer
     Dim CoinSpinCount As Integer = 0
@@ -82,7 +84,9 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         My.Computer.Audio.Play(My.Resources.CToss_Suspense, AudioPlayMode.Background)
         PictureBox1.Image = My.Resources.CoinFlip
     End Sub
-
+    'Iterates if randomly between head (0) and tails (1) 
+    'If 35 then FinalResult Show to offset Image and Audio 
+    'If 36 then Result for Audio
     Private Sub SpinDaCoin_Tick(sender As Object, e As EventArgs) Handles SpinDaCoin.Tick
         Dim Rand As New Random()
 

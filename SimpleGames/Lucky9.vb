@@ -1,7 +1,9 @@
 ﻿Imports System.Globalization
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar
-
+'Programmer: Raniel Christian Roque
+'BSIT - 2A
+'Date: October 22 2023
 Public Class Lucky9
     Dim Rand As New Random()
     Dim Choose_Game_Main As ChooseGame
@@ -42,6 +44,7 @@ Public Class Lucky9
             UpdateCashDisplay()
         End If
     End Sub
+
     Private Sub Draw_Click(sender As Object, e As EventArgs) Handles Draw.Click
         Dim result As Integer
 
@@ -79,15 +82,16 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Draw.Enabled = False
         TextBox1.ReadOnly = True
 
+        'START OF FUNCTION
+        'Randomizes Computer 1st Card
         ComCard1 = Rand.Next(0, 36)
-        ComPic1.Image = Cards(ComCard1)
         My.Computer.Audio.Play(My.Resources.CardFlip, AudioPlayMode.WaitToComplete)
 
+        'Loops Until it gets a non repeated number/card
         Do While True
             ComCard2 = Rand.Next(0, 36)
 
             If ComCard2 <> ComCard1 Then
-                ComPic2.Image = Cards(ComCard2)
                 Exit Do
             End If
         Loop
@@ -110,6 +114,8 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             End If
         Loop
 
+        'Plays Thinking Music
+        'Sets Carat and Pass Visible
         My.Computer.Audio.Play(My.Resources.ThinkingLucky9, AudioPlayMode.BackgroundLoop)
         Carat.Visible = True
         Pass.Visible = True
@@ -128,6 +134,21 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             End If
         Loop
 
+        'Special Rules: If Flush (Same Type and then 2-3-4) Auto Win
+        'Special Rules 2: If 3-3-3 then Auto Win
+        If (PlayerCard1 = 1 AndAlso PlayerCard2 = 2 AndAlso PlayerCard3 = 3) OrElse (PlayerCard1 = 10 AndAlso PlayerCard2 = 11 AndAlso PlayerCard3 = 12) OrElse (PlayerCard1 = 19 AndAlso PlayerCard2 = 20 AndAlso PlayerCard3 = 21) OrElse (PlayerCard1 = 28 AndAlso PlayerCard2 = 29 AndAlso PlayerCard3 = 30) Then
+            ComTotal = 0
+            PlayerTotal = 9
+            Result.Enabled = True
+            Return
+        ElseIf (PlayerCard1 = 2 OrElse PlayerCard1 = 11 OrElse PlayerCard1 = 20 OrElse PlayerCard1 = 29) AndAlso (PlayerCard2 = 2 OrElse PlayerCard2 = 11 OrElse PlayerCard2 = 20 OrElse PlayerCard2 = 29) AndAlso (PlayerCard3 = 2 OrElse PlayerCard3 = 11 OrElse PlayerCard3 = 20 OrElse PlayerCard3 = 29) Then
+            ComTotal = 0
+            PlayerTotal = 9
+            Result.Enabled = True
+            Return
+        End If
+
+        'For 9 (0 if Mod) (VERY INNEFICIENT ARGHHHHH but lazy to redo everything)
         'P1 = 9; P2 <> 9; P3 <> 9
         'P1 <> 9; P2 = 9; P3 <> 9
         'P1 <> 9; P2 <> 9; P3 = 9
@@ -170,7 +191,19 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             ComTotal = (C1 + C2) Mod 10
         End If
 
-        If (Not ComTotal = 9 AndAlso ComTotal < PlayerTotal) OrElse ComTotal < 6 Then
+        ComPic1.Image = Cards(ComCard1)
+        ComPic2.Image = Cards(ComCard2)
+
+        'If ComTotal (2 Cards) is 9 then Computer Wins Over 3 Card 9
+        If PlayerTotal <> 9 AndAlso ComTotal = 9 Then
+            ComTotal = 9
+            PlayerTotal = 0
+            Result.Enabled = True
+            Return
+        End If
+
+        'If Com < Player or < 6. Comp Hits
+        If ComTotal < PlayerTotal OrElse ComTotal < 6 Then
             Do While True
                 ComCard3 = Rand.Next(0, 36)
 
@@ -200,8 +233,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             Loop
         End If
 
-        MsgBox(ComTotal)
-        MsgBox(PlayerTotal)
         Result.Enabled = True
     End Sub
     Private Sub Pass_Click(sender As Object, e As EventArgs) Handles Pass.Click
@@ -233,11 +264,35 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             ComTotal = (C1 + C2) Mod 10
         End If
 
-        If (Not ComTotal = 9 AndAlso ComTotal < PlayerTotal) OrElse ComTotal < 6 Then
+        'If Player (2 Card) = 9 Then Auto Win
+        If PlayerTotal = 9 AndAlso ComTotal <> 9 Then
+            ComTotal = 0
+            PlayerTotal = 9
+            Result.Enabled = True
+            Return
+        End If
+
+        'Show Computer Cards
+        ComPic1.Image = Cards(ComCard1)
+        ComPic2.Image = Cards(ComCard2)
+
+        'If Com (2 Card) = 9 Then Auto Win
+        'If both 9 then Tie
+        'It hits when com is lower than player or total is 5 and below
+        If PlayerTotal <> 9 AndAlso ComTotal = 9 Then
+            ComTotal = 9
+            PlayerTotal = 0
+            Result.Enabled = True
+            Return
+        ElseIf PlayerTotal = 9 AndAlso ComTotal = 9 Then
+            ComTotal = 9
+            PlayerTotal = 9
+            Result.Enabled = True
+            Return
+        ElseIf ComTotal < PlayerTotal OrElse ComTotal < 6 Then
             My.Computer.Audio.Play(My.Resources.CardFlip, AudioPlayMode.WaitToComplete)
             Do While True
                 ComCard3 = Rand.Next(0, 36)
-
                 If ComCard3 <> ComCard1 AndAlso ComCard3 <> ComCard2 AndAlso ComCard3 <> PlayerCard1 AndAlso ComCard3 <> PlayerCard2 Then
                     ComPic3.Image = Cards(ComCard3)
                     Dim C3 As Integer = (ComCard3 + 1) Mod 9
@@ -264,15 +319,13 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             Loop
         End If
 
-        MsgBox(ComTotal)
-        MsgBox(PlayerTotal)
+        'Sound Results
         Result.Enabled = True
     End Sub
-    Private Sub ResetT_Click(sender As Object, e As EventArgs) Handles Reset.Click
+    Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
         Draw.Visible = True
         Draw.Enabled = True
         Reset.Visible = False
-        TextBox1.ReadOnly = False
 
         ComTotal = Nothing
         PlayerTotal = Nothing
@@ -307,6 +360,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Reset.Visible = True
         Draw.Visible = False
         Result.Enabled = False
+        TextBox1.ReadOnly = False
     End Sub
     Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
         If TextBox1.Text = "Enter Bet" Then

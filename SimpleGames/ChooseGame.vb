@@ -1,8 +1,13 @@
 ﻿Public Class ChooseGame
+    'Programmer: Raniel Christian Roque
+    'BSIT - 2A
+    'Date: October 22 2023
     Dim Choose_Game_Main As ChooseGame
     Dim Lottery_Game As Lottery
     Dim Lucky_9_Game As Lucky9
     Dim CToss_Game As CToss
+    Dim JEP_Game As JEP
+    'Cash Format
     Private Sub UpdateCashDisplay()
         If GlobalData.CashGlobal = 0 Then
             ToolStripMenuItem2.Text = "Cash: ₱0"
@@ -25,7 +30,7 @@
             Me.Close()
         End If
     End Sub
-
+    'Add Cash Input
     Private Sub AddCashToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         Dim inputBox As New AddCash()
         If inputBox.ShowDialog() = DialogResult.OK Then
@@ -64,6 +69,17 @@
                 CToss_Game = New CToss
             End If
             CToss_Game.Show()
+            Me.Close()
+        End If
+    End Sub
+    Private Sub JEP_Click(sender As Object, e As EventArgs) Handles JEP.Click
+        Dim result As DialogResult = MessageBox.Show("Play Jack En' Poy?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            If JEP_Game Is Nothing Then
+                JEP_Game = New JEP
+            End If
+            JEP_Game.Show()
             Me.Close()
         End If
     End Sub

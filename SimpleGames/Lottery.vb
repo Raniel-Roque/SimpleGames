@@ -1,20 +1,22 @@
 ﻿Imports System.IO.Pipes
 Public Class Lottery
+    'Programmer: Raniel Christian Roque
+    'BSIT - 2A
+    'Date: October 22 202
     Dim SpinCount As Integer
     Dim Slot1Final, Slot2Final, Slot3Final As Integer
     Dim Choose_Game_Main As ChooseGame
+    Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox1.Text = "Enter Bet"
+        TextBox1.ForeColor = Color.Gray
+        UpdateCashDisplay()
+    End Sub
     Private Sub UpdateCashDisplay()
         If GlobalData.CashGlobal = 0 Then
             ToolStripMenuItem2.Text = "Cash: ₱0"
         Else
             ToolStripMenuItem2.Text = "Cash: " + Format(GlobalData.CashGlobal, "₱#,##")
         End If
-    End Sub
-
-    Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox1.Text = "Enter Bet"
-        TextBox1.ForeColor = Color.Gray
-        UpdateCashDisplay()
     End Sub
     Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
         Dim result As DialogResult = MessageBox.Show("Choose Another Game?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -80,6 +82,9 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
     Private Sub Spinning_Tick(sender As Object, e As EventArgs) Handles Spinning.Tick
         Dim Rand As New Random()
+
+        'Checks Iteration For Spinning Lotter
+        'If 8, 16 or 25 then audio plays and stop respectively
         If SpinCount = 8 Or SpinCount = 16 Or SpinCount = 24 Then
             My.Computer.Audio.Play(My.Resources.Hit, AudioPlayMode.Background)
         End If
@@ -102,6 +107,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             Slot3.Image = My.Resources.ResourceManager.GetObject(SlotImage3)
         End If
 
+        'Plays when 25th for result
         If SpinCount = 25 Then
             If Slot1Final = Slot2Final AndAlso Slot2Final = Slot3Final AndAlso Slot1Final = Slot3Final Then
                 GlobalData.CashGlobal += TextBox1.Text * 3

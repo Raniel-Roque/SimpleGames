@@ -1,4 +1,7 @@
 ﻿Public Class AddCash
+    'Programmer: Raniel Christian Roque
+    'BSIT - 2A
+    'Date: October 22 2023
     Public Property Input As String
 
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OkButton.Click
