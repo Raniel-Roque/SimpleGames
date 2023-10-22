@@ -81,6 +81,7 @@ Partial Class Lottery
         'Spin
         '
         Me.Spin.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Spin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Spin.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Spin.FlatAppearance.BorderSize = 3
         Me.Spin.FlatStyle = System.Windows.Forms.FlatStyle.Flat

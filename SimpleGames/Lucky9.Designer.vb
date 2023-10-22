@@ -114,6 +114,7 @@ Partial Class Lucky9
         'Reset
         '
         Me.Reset.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Reset.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Reset.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Reset.FlatAppearance.BorderSize = 3
         Me.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -140,6 +141,7 @@ Partial Class Lucky9
         'Pass
         '
         Me.Pass.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Pass.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Pass.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Pass.FlatAppearance.BorderSize = 3
         Me.Pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -155,6 +157,7 @@ Partial Class Lucky9
         'Carat
         '
         Me.Carat.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Carat.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Carat.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Carat.FlatAppearance.BorderSize = 3
         Me.Carat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -236,6 +239,7 @@ Partial Class Lucky9
         'Draw
         '
         Me.Draw.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Draw.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Draw.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Draw.FlatAppearance.BorderSize = 3
         Me.Draw.FlatStyle = System.Windows.Forms.FlatStyle.Flat

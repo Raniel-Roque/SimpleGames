@@ -92,6 +92,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlobalData.vb" />
+    <Compile Include="JEP.Designer.vb">
+      <DependentUpon>JEP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JEP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Lottery.Designer.vb">
       <DependentUpon>Lottery.vb</DependentUpon>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CToss.resx">
       <DependentUpon>CToss.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JEP.resx">
+      <DependentUpon>JEP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lottery.resx">
       <DependentUpon>Lottery.vb</DependentUpon>

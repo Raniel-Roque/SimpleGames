@@ -1,5 +1,4 @@
 ﻿Imports System.Globalization
-Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar
 
@@ -13,7 +12,6 @@ Public Class Lucky9
         My.Resources.ace_clubs_white, My.Resources._2_clubs_white, My.Resources._3_clubs_white, My.Resources._4_clubs_white, My.Resources._5_clubs_white, My.Resources._6_clubs_white, My.Resources._7_clubs_white, My.Resources._8_clubs_white, My.Resources._9_clubs_white,
         My.Resources.ace_hearts_white, My.Resources._2_hearts_white, My.Resources._3_hearts_white, My.Resources._4_hearts_white, My.Resources._5_hearts_white, My.Resources._6_hearts_white, My.Resources._7_hearts_white, My.Resources._8_hearts_white, My.Resources._9_hearts_white
     }
-
     Private Sub UpdateCashDisplay()
         If GlobalData.CashGlobal = 0 Then
             ToolStripMenuItem2.Text = "Cash: ₱0"
@@ -21,7 +19,6 @@ Public Class Lucky9
             ToolStripMenuItem2.Text = "Cash: " + Format(GlobalData.CashGlobal, "₱#,##")
         End If
     End Sub
-
     Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox1.Text = "Enter Bet"
         TextBox1.ForeColor = Color.Gray
@@ -45,7 +42,6 @@ Public Class Lucky9
             UpdateCashDisplay()
         End If
     End Sub
-
     Private Sub Draw_Click(sender As Object, e As EventArgs) Handles Draw.Click
         Dim result As Integer
 
@@ -132,8 +128,47 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             End If
         Loop
 
-        PlayerTotal = (((PlayerCard1 + 1) Mod 9) + ((PlayerCard2 + 1) Mod 9) + ((PlayerCard3 + 1) Mod 9)) Mod 10
-        ComTotal = (((ComCard1 + 1) Mod 9) + ((ComCard2 + 1) Mod 9)) Mod 10
+        'P1 = 9; P2 <> 9; P3 <> 9
+        'P1 <> 9; P2 = 9; P3 <> 9
+        'P1 <> 9; P2 <> 9; P3 = 9
+        'P1 = 9; P2 = 9; P3 <> 9
+        'P1 = 9; P2 <> 9; P3 = 9
+        'P1 <> 9; P2 = 9; P3 = 9
+        'P1 = 9; P2 = 9; P3 = 9
+        'P1 <> 9; P2 <> 9; P3 <> 9
+        Dim P1 As Integer = (PlayerCard1 + 1) Mod 9
+        Dim P2 As Integer = (PlayerCard2 + 1) Mod 9
+        Dim P3 As Integer = (PlayerCard3 + 1) Mod 9
+        Dim C1 As Integer = (ComCard1 + 1) Mod 9
+        Dim C2 As Integer = (ComCard2 + 1) Mod 9
+
+        If P1 = 0 AndAlso P2 <> 0 AndAlso P3 <> 0 Then
+            PlayerTotal = (9 + P2 + P3) Mod 10
+        ElseIf P1 <> 0 AndAlso P2 = 0 AndAlso P3 <> 0 Then
+            PlayerTotal = (P1 + 9 + P3) Mod 10
+        ElseIf P1 <> 0 AndAlso P2 <> 0 AndAlso P3 = 0 Then
+            PlayerTotal = (P1 + P2 + 9) Mod 10
+        ElseIf P1 = 0 AndAlso P2 = 0 AndAlso P3 <> 0 Then
+            PlayerTotal = (9 + 9 + P3) Mod 10
+        ElseIf P1 = 0 AndAlso P2 <> 0 AndAlso P3 = 0 Then
+            PlayerTotal = (9 + P2 + 9) Mod 10
+        ElseIf P1 <> 0 AndAlso P2 = 0 AndAlso P3 = 0 Then
+            PlayerTotal = (P1 + 9 + 9) Mod 10
+        ElseIf P1 = 0 AndAlso P2 = 0 AndAlso P3 = 0 Then
+            PlayerTotal = (9 + 9 + 9) Mod 10
+        Else
+            PlayerTotal = (P1 + P2 + P3) Mod 10
+        End If
+
+        If C1 = 0 AndAlso C2 <> 0 Then
+            ComTotal = (9 + C2) Mod 10
+        ElseIf C1 <> 0 AndAlso C2 = 0 Then
+            ComTotal = (C1 + 9) Mod 10
+        ElseIf C1 = 0 AndAlso C2 = 0 Then
+            ComTotal = (9 + 9) Mod 10
+        Else
+            ComTotal = (C1 + C2) Mod 10
+        End If
 
         If (Not ComTotal = 9 AndAlso ComTotal < PlayerTotal) OrElse ComTotal < 6 Then
             Do While True
@@ -141,20 +176,62 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
                 If ComCard3 <> ComCard1 AndAlso ComCard3 <> ComCard2 AndAlso ComCard3 <> PlayerCard1 AndAlso ComCard3 <> PlayerCard2 AndAlso ComCard3 <> PlayerCard3 Then
                     ComPic3.Image = Cards(ComCard3)
-                    ComTotal = (((ComCard1 + 1) Mod 9) + ((ComCard2 + 1) Mod 9) + ((ComCard3 + 1) Mod 9)) Mod 10
+                    Dim C3 As Integer = (ComCard3 + 1) Mod 9
+
+                    If C1 = 0 AndAlso C2 <> 0 AndAlso C3 <> 0 Then
+                        ComTotal = (9 + C2 + C3) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
+                        ComTotal = (C1 + 9 + C3) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
+                        ComTotal = (C1 + C2 + 9) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
+                        ComTotal = (9 + 9 + C3) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
+                        ComTotal = (9 + C2 + 9) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
+                        ComTotal = (C1 + 9 + 9) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
+                        ComTotal = (9 + 9 + 9) Mod 10
+                    Else
+                        ComTotal = (C1 + C2 + C3) Mod 10
+                    End If
                     Exit Do
                 End If
             Loop
         End If
 
+        MsgBox(ComTotal)
+        MsgBox(PlayerTotal)
         Result.Enabled = True
     End Sub
     Private Sub Pass_Click(sender As Object, e As EventArgs) Handles Pass.Click
         Carat.Visible = False
         Pass.Visible = False
 
-        PlayerTotal = (((PlayerCard1 + 1) Mod 9) + ((PlayerCard2 + 1) Mod 9)) Mod 10
-        ComTotal = (((ComCard1 + 1) Mod 9) + ((ComCard2 + 1) Mod 9)) Mod 10
+        Dim P1 As Integer = (PlayerCard1 + 1) Mod 9
+        Dim P2 As Integer = (PlayerCard2 + 1) Mod 9
+        Dim C1 As Integer = (ComCard1 + 1) Mod 9
+        Dim C2 As Integer = (ComCard2 + 1) Mod 9
+
+        If P1 = 0 AndAlso P2 <> 0 Then
+            PlayerTotal = (9 + P2) Mod 10
+        ElseIf P1 <> 0 AndAlso P2 = 0 Then
+            PlayerTotal = (P1 + 9) Mod 10
+        ElseIf P1 = 0 AndAlso P2 = 0 Then
+            PlayerTotal = (9 + 9) Mod 10
+        Else
+            PlayerTotal = (P1 + P2) Mod 10
+        End If
+
+        If C1 = 0 AndAlso C2 <> 0 Then
+            ComTotal = (9 + C2) Mod 10
+        ElseIf C1 <> 0 AndAlso C2 = 0 Then
+            ComTotal = (C1 + 9) Mod 10
+        ElseIf C1 = 0 AndAlso C2 = 0 Then
+            ComTotal = (9 + 9) Mod 10
+        Else
+            ComTotal = (C1 + C2) Mod 10
+        End If
 
         If (Not ComTotal = 9 AndAlso ComTotal < PlayerTotal) OrElse ComTotal < 6 Then
             My.Computer.Audio.Play(My.Resources.CardFlip, AudioPlayMode.WaitToComplete)
@@ -163,12 +240,32 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
                 If ComCard3 <> ComCard1 AndAlso ComCard3 <> ComCard2 AndAlso ComCard3 <> PlayerCard1 AndAlso ComCard3 <> PlayerCard2 Then
                     ComPic3.Image = Cards(ComCard3)
-                    ComTotal = (((ComCard1 + 1) Mod 9) + ((ComCard2 + 1) Mod 9) + ((ComCard3 + 1) Mod 9)) Mod 10
+                    Dim C3 As Integer = (ComCard3 + 1) Mod 9
+
+                    If C1 = 0 AndAlso C2 <> 0 AndAlso C3 <> 0 Then
+                        ComTotal = (9 + C2 + C3) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
+                        ComTotal = (C1 + 9 + C3) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
+                        ComTotal = (C1 + C2 + 9) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
+                        ComTotal = (9 + 9 + C3) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
+                        ComTotal = (9 + C2 + 9) Mod 10
+                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
+                        ComTotal = (C1 + 9 + 9) Mod 10
+                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
+                        ComTotal = (9 + 9 + 9) Mod 10
+                    Else
+                        ComTotal = (C1 + C2 + C3) Mod 10
+                    End If
                     Exit Do
                 End If
             Loop
         End If
 
+        MsgBox(ComTotal)
+        MsgBox(PlayerTotal)
         Result.Enabled = True
     End Sub
     Private Sub ResetT_Click(sender As Object, e As EventArgs) Handles Reset.Click
@@ -176,7 +273,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Draw.Enabled = True
         Reset.Visible = False
         TextBox1.ReadOnly = False
-        HomeToolStripMenuItem.Enabled = True
 
         ComTotal = Nothing
         PlayerTotal = Nothing
@@ -205,6 +301,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             My.Computer.Audio.Play(My.Resources.Win, AudioPlayMode.WaitToComplete)
         End If
 
+        HomeToolStripMenuItem.Enabled = True
         My.Computer.Audio.Play(My.Resources.Casino_Main, AudioPlayMode.BackgroundLoop)
         UpdateCashDisplay()
         Reset.Visible = True

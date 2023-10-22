@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CToss
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class CToss
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CToss))
@@ -31,8 +31,8 @@ Partial Class CToss
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Toss = New System.Windows.Forms.Button()
         Me.SpinDaCoin = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -97,6 +97,7 @@ Partial Class CToss
         'Toss
         '
         Me.Toss.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Toss.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Toss.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Toss.FlatAppearance.BorderSize = 3
         Me.Toss.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -111,16 +112,6 @@ Partial Class CToss
         'SpinDaCoin
         '
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SimpleGames.My.Resources.Resources.Tails
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 45)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(241, 202)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 19
-        Me.PictureBox1.TabStop = False
-        '
         'ComboBox1
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -131,6 +122,16 @@ Partial Class CToss
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(226, 32)
         Me.ComboBox1.TabIndex = 20
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SimpleGames.My.Resources.Resources.Tails
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 45)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(241, 202)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
         '
         'CToss
         '
