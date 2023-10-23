@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SimpleGames")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("HP")>
+<Assembly: AssemblyTitle("Casino Games")>
+<Assembly: AssemblyDescription("Gambling Application")>
+<Assembly: AssemblyCompany("RRStakx")>
 <Assembly: AssemblyProduct("SimpleGames")>
-<Assembly: AssemblyCopyright("Copyright © HP 2023")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCopyright("Copyright © 2023")>
+<Assembly: AssemblyTrademark("RRStakx™")>
 
 <Assembly: ComVisible(False)>
 
