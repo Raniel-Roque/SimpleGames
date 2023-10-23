@@ -3,7 +3,7 @@
 Public Class JEP
     'Programmer: Raniel Christian Roque
     'BSIT - 2A
-    'Date: October 22 2023
+    'Date: October 23 2023
     Dim Rand As New Random()
     Dim ComRandCount As Integer = 0
     Dim Player1Chose, Player2Chose, ComChoose As Integer

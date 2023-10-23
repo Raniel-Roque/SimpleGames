@@ -2,7 +2,7 @@
     'Programmer: Raniel Christian Roque
     'BSIT - 2A
     'Date: October 22 2023
-    Dim Choose_Game_Main As ChooseGame
+    Dim Load_Game As LoadGame
     Dim Lottery_Game As Lottery
     Dim Lucky_9_Game As Lucky9
     Dim CToss_Game As CToss
@@ -16,17 +16,16 @@
         End If
     End Sub
     Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        My.Computer.Audio.Play(My.Resources.Casino_Main, AudioPlayMode.BackgroundLoop)
         UpdateCashDisplay()
     End Sub
     Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
         Dim result As DialogResult = MessageBox.Show("Choose Another Game?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
-            If Choose_Game_Main Is Nothing Then
-                Choose_Game_Main = New ChooseGame
+            If Load_Game Is Nothing Then
+                Load_Game = New LoadGame
             End If
-            Choose_Game_Main.Show()
+            LoadGame.Show()
             Me.Close()
         End If
     End Sub

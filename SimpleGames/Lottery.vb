@@ -71,7 +71,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         GlobalData.CashGlobal -= TextBox1.Text
         UpdateCashDisplay()
 
-        Me.Cursor = Cursors.WaitCursor
         Spinning.Enabled = True
         Spin.Enabled = False
         TextBox1.ReadOnly = True
@@ -119,7 +118,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
                 My.Computer.Audio.Play(My.Resources.Lose, AudioPlayMode.WaitToComplete)
             End If
 
-            Me.Cursor = Cursors.Default
             SpinCount = 0
             Spinning.Enabled = False
             Spin.Enabled = True
@@ -129,6 +127,10 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             My.Computer.Audio.Play(My.Resources.Casino_Main, AudioPlayMode.BackgroundLoop)
         End If
         SpinCount += 1
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
     End Sub
 
     Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus

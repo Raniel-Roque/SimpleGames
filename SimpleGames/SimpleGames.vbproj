@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>229799.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -98,6 +101,12 @@
     <Compile Include="JEP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoadGame.Designer.vb">
+      <DependentUpon>LoadGame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadGame.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Lottery.Designer.vb">
       <DependentUpon>Lottery.vb</DependentUpon>
     </Compile>
@@ -139,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JEP.resx">
       <DependentUpon>JEP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadGame.resx">
+      <DependentUpon>LoadGame.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lottery.resx">
       <DependentUpon>Lottery.vb</DependentUpon>
@@ -429,6 +441,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\JEP-Voice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="229799.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

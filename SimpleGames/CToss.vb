@@ -73,7 +73,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         GlobalData.CashGlobal -= TextBox1.Text
         UpdateCashDisplay()
 
-        Me.Cursor = Cursors.WaitCursor
         ComboBox1.Enabled = False
         SpinDaCoin.Enabled = True
         Toss.Enabled = False
@@ -103,8 +102,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         End If
 
         If CoinSpinCount = 36 Then
-            Me.Cursor = Cursors.Default
-
             If (FinalFace = 0 AndAlso ComboBox1.SelectedIndex = 0) OrElse (FinalFace = 1 AndAlso ComboBox1.SelectedIndex = 1) Then
                 GlobalData.CashGlobal += TextBox1.Text * 2
                 My.Computer.Audio.Play(My.Resources.Win, AudioPlayMode.WaitToComplete)
