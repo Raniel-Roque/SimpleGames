@@ -379,5 +379,56 @@
   <ItemGroup>
     <None Include="Resources\ThinkingLucky9.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Street_Fighter_VS_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaperL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScissorL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RockL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HandUpL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaperR_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RockR_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScissorR_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaperL_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RockL_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScissorL_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PaperR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScissorR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RockR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HandUpR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QMark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JEP-Voice.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
