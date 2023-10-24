@@ -279,14 +279,17 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         'Rock = 0; Paper = 1; Scissor = 2
         If ComboBox1.SelectedIndex = 0 Then
             If Player1Chose = ComChoose Then
-                PlayerResultedLabel.Text = "TIE"
+                PlayerResultedLabel.Text = "TIE" 
+                ComResultedLabel.Text = "TIE"    
                 GlobalData.CashGlobal += TextBox1.Text
                 My.Computer.Audio.Play(My.Resources.TiedGame, AudioPlayMode.WaitToComplete)
             ElseIf (Player1Chose = 0 AndAlso ComChoose = 1) OrElse (Player1Chose = 1 AndAlso ComChoose = 2) OrElse (Player1Chose = 2 AndAlso ComChoose = 0) Then
                 PlayerResultedLabel.Text = "LOSE"
+                ComResultedLabel.Text = "WIN"   
                 My.Computer.Audio.Play(My.Resources.Lose, AudioPlayMode.WaitToComplete)
             Else
                 PlayerResultedLabel.Text = "WIN"
+                ComResultedLabel.Text = "LOSE"   
                 GlobalData.CashGlobal += TextBox1.Text * 2
                 My.Computer.Audio.Play(My.Resources.Win, AudioPlayMode.WaitToComplete)
             End If
