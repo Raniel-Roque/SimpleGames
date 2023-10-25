@@ -42,13 +42,13 @@ Public Class CToss
     Private Sub Toss_Click(sender As Object, e As EventArgs) Handles Toss.Click
         Dim result As Integer
 
-        If TextBox1.Text = Nothing OrElse TextBox1.Text = "Enter Bet" OrElse Not ULong.TryParse(TextBox1.Text, result) OrElse TextBox1.Text = 0 Then
-            MessageBox.Show("Please Bet an Amount", "Bet", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If Not ULong.TryParse(TextBox1.Text, result) Then
+            MessageBox.Show("Please Enter a Valid Amount", "Invalid Bet", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TextBox1.Text = "Enter Bet"
             TextBox1.ForeColor = Color.Gray
             Return
-        ElseIf Not ULong.TryParse(TextBox1.Text, result) Then
-            MessageBox.Show("Please Enter a Valid Amount", "Invalid Bet", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf TextBox1.Text = Nothing OrElse TextBox1.Text = "Enter Bet" OrElse TextBox1.Text = 0 Then
+            MessageBox.Show("Please Bet an Amount", "Invalid Bet", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TextBox1.Text = "Enter Bet"
             TextBox1.ForeColor = Color.Gray
             Return
