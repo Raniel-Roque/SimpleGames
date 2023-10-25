@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_7_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7_hearts_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_7_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,8 +127,14 @@
   <data name="Lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="QMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QMark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_10_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10_hearts_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaperR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\17f7090ce8d37a72d898f9eda9ce4186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,17 +145,29 @@
   <data name="_3_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HandUpL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HandUpL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lottery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixel-art-slot-machine-casino-and-betting-machine-icon-for-8bit-game-on-white-background-vector-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JEP_Voice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JEP-Voice.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="_4_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4_hearts_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ScissorL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ScissorL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ScissorL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScissorL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_8_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Lottery_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7b4b2c2308e90e7-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Street_Fighter_VS_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Street_Fighter_VS_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Table" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\istockphoto-1218354508-612x612-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +175,7 @@
   <data name="_4_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Lottery_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2ef076a0f806ee379fec0aba5e3c4456-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ace_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -172,11 +187,17 @@
   <data name="Lucky9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\61578686d50e9c157bfe6ebb_PRF Lucky 9_Final Logo_100121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ace_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ace_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_5_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_10_clubs_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10_clubs_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_9_clubs_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9_clubs_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +235,9 @@
   <data name="_8_clubs_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8_clubs_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RockL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RockL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_3_clubs_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3_clubs_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,8 +250,14 @@
   <data name="PaperR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PaperR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="RockR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RockR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lottery_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HandUpR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HandUpR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lottery_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,9 +274,6 @@
   <data name="_5_clubs_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5_clubs_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_6_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PaperL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PaperL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -262,6 +289,9 @@
   <data name="Casino_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Casino Main.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ScissorR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScissorR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_10_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,7 +304,7 @@
   <data name="_2_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2_hearts_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Lottery_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8ad72b544b53900c41f0997f577012e0-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TiedGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -289,11 +319,11 @@
   <data name="ace_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ace_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Lottery_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5b4b12e1e64c7264fa72a0922da0507e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_3_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ScissorL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScissorL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Win" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Win.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -328,11 +358,14 @@
   <data name="Coin_Flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coin_Flip-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PaperL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_6_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ace_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ace_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_6_diamonds_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6_diamonds_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tails.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -340,40 +373,10 @@
   <data name="_4_spades_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4_spades_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lottery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pixel-art-slot-machine-casino-and-betting-machine-icon-for-8bit-game-on-white-background-vector-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_7_hearts_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7_hearts_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Street_Fighter_VS_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Street_Fighter_VS_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HandUpL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HandUpL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HandUpR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HandUpR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaperL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaperL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaperR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaperR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RockL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RockL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RockR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RockR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ScissorL_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ScissorL_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ScissorR_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ScissorR_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="JEP_Voice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JEP-Voice.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="QMark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QMark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="640px-Question_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\640px-Question_mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

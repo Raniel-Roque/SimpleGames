@@ -147,6 +147,12 @@
     <Compile Include="Lottery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LotteryHelp.Designer.vb">
+      <DependentUpon>LotteryHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LotteryHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Lucky9.Designer.vb">
       <DependentUpon>Lucky9.vb</DependentUpon>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lottery.resx">
       <DependentUpon>Lottery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LotteryHelp.resx">
+      <DependentUpon>LotteryHelp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lucky9.resx">
       <DependentUpon>Lucky9.vb</DependentUpon>
@@ -479,6 +488,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="229799.ico" />
+    <None Include="Resources\640px-Question_mark.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

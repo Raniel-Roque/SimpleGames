@@ -69,7 +69,7 @@ Partial Class LoadGame
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.SimpleGames.My.Resources.Resources._10_spades_white
+        Me.PictureBox2.Image = Global.SimpleGames.My.Resources.Resources._9_spades_white
         Me.PictureBox2.Location = New System.Drawing.Point(254, 33)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(60, 84)
@@ -79,7 +79,7 @@ Partial Class LoadGame
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.SimpleGames.My.Resources.Resources._10_spades_white
+        Me.PictureBox3.Image = Global.SimpleGames.My.Resources.Resources._8_diamonds_white
         Me.PictureBox3.Location = New System.Drawing.Point(277, 42)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(60, 84)

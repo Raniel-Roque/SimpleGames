@@ -1004,6 +1004,9 @@
         KwDXT5Je788/Yep5k963n3j2vF/5XTfZ86a9V0kHAAAAADjMb7/9B4ExOx8Tt/YhAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Spinning.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
   <data name="Slot1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAbEAAAJBCAYAAADIqos1AAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -4610,9 +4613,6 @@
         8J8P/+W//D8WVXzDlsfbcgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="Spinning.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAANcNAADXDQAAAAAAAAAA

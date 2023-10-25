@@ -107,10 +107,25 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
         'Plays when 25th for result
         If SpinCount = 25 Then
-            If Slot1Final = Slot2Final AndAlso Slot2Final = Slot3Final AndAlso Slot1Final = Slot3Final Then
-                GlobalData.CashGlobal += TextBox1.Text * 3
+            If Slot1Final = 6 AndAlso Slot2Final = 6 AndAlso Slot3Final = 6 Then
+                GlobalData.CashGlobal += TextBox1.Text * 25
+                My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
+            ElseIf Slot1Final = 5 AndAlso Slot2Final = 5 AndAlso Slot3Final = 5 Then
+                GlobalData.CashGlobal += TextBox1.Text * 20
+                My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
+            ElseIf (Slot1Final = 4 AndAlso Slot2Final = 4 AndAlso Slot3Final = 4) OrElse (Slot1Final = 3 AndAlso Slot2Final = 3 AndAlso Slot3Final = 3) Then
+                GlobalData.CashGlobal += TextBox1.Text * 15
+                My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
+            ElseIf Slot1Final = 2 AndAlso Slot2Final = 2 AndAlso Slot3Final = 2 Then
+                GlobalData.CashGlobal += TextBox1.Text * 10
+                My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
+            ElseIf (Slot1Final = 1 AndAlso Slot2Final = 1 AndAlso Slot3Final = 1) OrElse (Slot1Final = 0 AndAlso Slot2Final = 0 AndAlso Slot3Final = 0) Then
+                GlobalData.CashGlobal += TextBox1.Text * 5
                 My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
             ElseIf Slot1Final = Slot2Final Or Slot1Final = Slot3Final Or Slot2Final = Slot3Final Then
+                GlobalData.CashGlobal += TextBox1.Text * 3
+                My.Computer.Audio.Play(My.Resources.Win, AudioPlayMode.WaitToComplete)
+            ElseIf Slot1Final = 6 Or Slot2Final = 6 Or Slot3Final = 6 Then
                 GlobalData.CashGlobal += TextBox1.Text * 2
                 My.Computer.Audio.Play(My.Resources.Win, AudioPlayMode.WaitToComplete)
             Else
@@ -128,8 +143,15 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         SpinCount += 1
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles Help.Click
+        Dim Help_Lottery As LotteryHelp
 
+        If Application.OpenForms().OfType(Of LotteryHelp)().Any() Then
+            Return
+        End If
+
+        Help_Lottery = New LotteryHelp
+        Help_Lottery.Show()
     End Sub
 
     Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
