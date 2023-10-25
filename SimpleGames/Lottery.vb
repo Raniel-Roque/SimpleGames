@@ -3,6 +3,7 @@ Public Class Lottery
     'Programmer: Raniel Christian Roque
     'BSIT - 2A
     'Date: October 22 202
+    Dim Rand As New Random()
     Dim SpinCount As Integer
     Dim Slot1Final, Slot2Final, Slot3Final As Integer
     Dim Choose_Game_Main As ChooseGame
@@ -80,8 +81,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
     End Sub
 
     Private Sub Spinning_Tick(sender As Object, e As EventArgs) Handles Spinning.Tick
-        Dim Rand As New Random()
-
         'Checks Iteration For Spinning Lotter
         'If 8, 16 or 25 then audio plays and stop respectively
         If SpinCount = 8 Or SpinCount = 16 Or SpinCount = 24 Then
