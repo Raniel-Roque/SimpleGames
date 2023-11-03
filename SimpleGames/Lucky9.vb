@@ -9,10 +9,10 @@ Public Class Lucky9
     Dim Choose_Game_Main As ChooseGame
     Dim ComCard1, ComCard2, ComCard3, PlayerCard1, PlayerCard2, PlayerCard3, ComTotal, PlayerTotal As Integer
     Dim Cards() As Image = {
-        My.Resources.ace_spades_white, My.Resources._2_spades_white, My.Resources._3_spades_white, My.Resources._4_spades_white, My.Resources._5_spades_white, My.Resources._6_spades_white, My.Resources._7_spades_white, My.Resources._8_spades_white, My.Resources._9_spades_white,
-        My.Resources.ace_diamonds_white, My.Resources._2_diamonds_white, My.Resources._3_diamonds_white, My.Resources._4_diamonds_white, My.Resources._5_diamonds_white, My.Resources._6_diamonds_white, My.Resources._7_diamonds_white, My.Resources._8_diamonds_white, My.Resources._9_diamonds_white,
-        My.Resources.ace_clubs_white, My.Resources._2_clubs_white, My.Resources._3_clubs_white, My.Resources._4_clubs_white, My.Resources._5_clubs_white, My.Resources._6_clubs_white, My.Resources._7_clubs_white, My.Resources._8_clubs_white, My.Resources._9_clubs_white,
-        My.Resources.ace_hearts_white, My.Resources._2_hearts_white, My.Resources._3_hearts_white, My.Resources._4_hearts_white, My.Resources._5_hearts_white, My.Resources._6_hearts_white, My.Resources._7_hearts_white, My.Resources._8_hearts_white, My.Resources._9_hearts_white
+        My.Resources.ace_spades_white, My.Resources._2_spades_white, My.Resources._3_spades_white, My.Resources._4_spades_white, My.Resources._5_spades_white, My.Resources._6_spades_white, My.Resources._7_spades_white, My.Resources._8_spades_white, My.Resources._9_spades_white, My.Resources._10_spades_white,
+        My.Resources.ace_diamonds_white, My.Resources._2_diamonds_white, My.Resources._3_diamonds_white, My.Resources._4_diamonds_white, My.Resources._5_diamonds_white, My.Resources._6_diamonds_white, My.Resources._7_diamonds_white, My.Resources._8_diamonds_white, My.Resources._9_diamonds_white, My.Resources._10_diamonds_white,
+        My.Resources.ace_clubs_white, My.Resources._2_clubs_white, My.Resources._3_clubs_white, My.Resources._4_clubs_white, My.Resources._5_clubs_white, My.Resources._6_clubs_white, My.Resources._7_clubs_white, My.Resources._8_clubs_white, My.Resources._9_clubs_white, My.Resources._10_clubs_white,
+        My.Resources.ace_hearts_white, My.Resources._2_hearts_white, My.Resources._3_hearts_white, My.Resources._4_hearts_white, My.Resources._5_hearts_white, My.Resources._6_hearts_white, My.Resources._7_hearts_white, My.Resources._8_hearts_white, My.Resources._9_hearts_white, My.Resources._10_hearts_white
     }
     Private Sub UpdateCashDisplay()
         If GlobalData.CashGlobal = 0 Then
@@ -84,12 +84,12 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
         'START OF FUNCTION
         'Randomizes Computer 1st Card
-        ComCard1 = Rand.Next(0, 36)
+        ComCard1 = Rand.Next(0, 40)
         My.Computer.Audio.Play(My.Resources.CardFlip, AudioPlayMode.WaitToComplete)
 
         'Loops Until it gets a non repeated number/card
         Do While True
-            ComCard2 = Rand.Next(0, 36)
+            ComCard2 = Rand.Next(0, 40)
 
             If ComCard2 <> ComCard1 Then
                 Exit Do
@@ -97,7 +97,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Loop
 
         Do While True
-            PlayerCard1 = Rand.Next(0, 36)
+            PlayerCard1 = Rand.Next(0, 40)
 
             If PlayerCard1 <> ComCard1 AndAlso PlayerCard1 <> ComCard2 Then
                 PlayerPic1.Image = Cards(PlayerCard1)
@@ -106,7 +106,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Loop
 
         Do While True
-            PlayerCard2 = Rand.Next(0, 36)
+            PlayerCard2 = Rand.Next(0, 40)
 
             If PlayerCard2 <> ComCard1 AndAlso PlayerCard2 <> ComCard2 AndAlso PlayerCard2 <> PlayerCard1 Then
                 PlayerPic2.Image = Cards(PlayerCard2)
@@ -126,7 +126,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Pass.Visible = False
 
         Do While True
-            PlayerCard3 = Rand.Next(0, 36)
+            PlayerCard3 = Rand.Next(0, 40)
 
             If PlayerCard3 <> ComCard1 AndAlso PlayerCard3 <> ComCard2 AndAlso PlayerCard3 <> PlayerCard1 AndAlso PlayerCard3 <> PlayerCard2 Then
                 PlayerPic3.Image = Cards(PlayerCard3)
@@ -136,60 +136,20 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
 
         'Special Rules: If Flush (Same Type and then 2-3-4) Auto Win
         'Special Rules 2: If 3-3-3 then Auto Win
-        If (PlayerCard1 = 1 AndAlso PlayerCard2 = 2 AndAlso PlayerCard3 = 3) OrElse (PlayerCard1 = 10 AndAlso PlayerCard2 = 11 AndAlso PlayerCard3 = 12) OrElse (PlayerCard1 = 19 AndAlso PlayerCard2 = 20 AndAlso PlayerCard3 = 21) OrElse (PlayerCard1 = 28 AndAlso PlayerCard2 = 29 AndAlso PlayerCard3 = 30) Then
+        If (PlayerCard1 = 1 AndAlso PlayerCard2 = 2 AndAlso PlayerCard3 = 3) OrElse (PlayerCard1 = 11 AndAlso PlayerCard2 = 12 AndAlso PlayerCard3 = 13) OrElse (PlayerCard1 = 21 AndAlso PlayerCard2 = 22 AndAlso PlayerCard3 = 23) OrElse (PlayerCard1 = 31 AndAlso PlayerCard2 = 32 AndAlso PlayerCard3 = 33) Then
             ComTotal = 0
             PlayerTotal = 9
             Result.Enabled = True
             Return
-        ElseIf (PlayerCard1 = 2 OrElse PlayerCard1 = 11 OrElse PlayerCard1 = 20 OrElse PlayerCard1 = 29) AndAlso (PlayerCard2 = 2 OrElse PlayerCard2 = 11 OrElse PlayerCard2 = 20 OrElse PlayerCard2 = 29) AndAlso (PlayerCard3 = 2 OrElse PlayerCard3 = 11 OrElse PlayerCard3 = 20 OrElse PlayerCard3 = 29) Then
+        ElseIf (PlayerCard1 = 2 OrElse PlayerCard1 = 12 OrElse PlayerCard1 = 22 OrElse PlayerCard1 = 32) AndAlso (PlayerCard2 = 2 OrElse PlayerCard2 = 12 OrElse PlayerCard2 = 22 OrElse PlayerCard2 = 32) AndAlso (PlayerCard3 = 2 OrElse PlayerCard3 = 12 OrElse PlayerCard3 = 22 OrElse PlayerCard3 = 32) Then
             ComTotal = 0
             PlayerTotal = 9
             Result.Enabled = True
             Return
         End If
 
-        'For 9 (0 if Mod) (VERY INNEFICIENT ARGHHHHH but lazy to redo everything)
-        'P1 = 9; P2 <> 9; P3 <> 9
-        'P1 <> 9; P2 = 9; P3 <> 9
-        'P1 <> 9; P2 <> 9; P3 = 9
-        'P1 = 9; P2 = 9; P3 <> 9
-        'P1 = 9; P2 <> 9; P3 = 9
-        'P1 <> 9; P2 = 9; P3 = 9
-        'P1 = 9; P2 = 9; P3 = 9
-        'P1 <> 9; P2 <> 9; P3 <> 9
-        Dim P1 As Integer = (PlayerCard1 + 1) Mod 9
-        Dim P2 As Integer = (PlayerCard2 + 1) Mod 9
-        Dim P3 As Integer = (PlayerCard3 + 1) Mod 9
-        Dim C1 As Integer = (ComCard1 + 1) Mod 9
-        Dim C2 As Integer = (ComCard2 + 1) Mod 9
-
-        If P1 = 0 AndAlso P2 <> 0 AndAlso P3 <> 0 Then
-            PlayerTotal = (9 + P2 + P3) Mod 10
-        ElseIf P1 <> 0 AndAlso P2 = 0 AndAlso P3 <> 0 Then
-            PlayerTotal = (P1 + 9 + P3) Mod 10
-        ElseIf P1 <> 0 AndAlso P2 <> 0 AndAlso P3 = 0 Then
-            PlayerTotal = (P1 + P2 + 9) Mod 10
-        ElseIf P1 = 0 AndAlso P2 = 0 AndAlso P3 <> 0 Then
-            PlayerTotal = (9 + 9 + P3) Mod 10
-        ElseIf P1 = 0 AndAlso P2 <> 0 AndAlso P3 = 0 Then
-            PlayerTotal = (9 + P2 + 9) Mod 10
-        ElseIf P1 <> 0 AndAlso P2 = 0 AndAlso P3 = 0 Then
-            PlayerTotal = (P1 + 9 + 9) Mod 10
-        ElseIf P1 = 0 AndAlso P2 = 0 AndAlso P3 = 0 Then
-            PlayerTotal = (9 + 9 + 9) Mod 10
-        Else
-            PlayerTotal = (P1 + P2 + P3) Mod 10
-        End If
-
-        If C1 = 0 AndAlso C2 <> 0 Then
-            ComTotal = (9 + C2) Mod 10
-        ElseIf C1 <> 0 AndAlso C2 = 0 Then
-            ComTotal = (C1 + 9) Mod 10
-        ElseIf C1 = 0 AndAlso C2 = 0 Then
-            ComTotal = (9 + 9) Mod 10
-        Else
-            ComTotal = (C1 + C2) Mod 10
-        End If
+        PlayerTotal = (PlayerCard1 + PlayerCard2 + PlayerCard3 + 3) Mod 10
+        ComTotal = (ComCard1 + ComCard2 + 2) Mod 10
 
         ComPic1.Image = Cards(ComCard1)
         ComPic2.Image = Cards(ComCard2)
@@ -202,32 +162,14 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             Return
         End If
 
-        'If Com < Player or < 6. Comp Hits
-        If ComTotal < PlayerTotal OrElse ComTotal < 6 Then
+        'Comp Hits
+        If (ComTotal <= PlayerTotal AndAlso ComTotal <> 9) OrElse ComTotal < 6 Then
             Do While True
-                ComCard3 = Rand.Next(0, 36)
+                ComCard3 = Rand.Next(0, 40)
 
                 If ComCard3 <> ComCard1 AndAlso ComCard3 <> ComCard2 AndAlso ComCard3 <> PlayerCard1 AndAlso ComCard3 <> PlayerCard2 AndAlso ComCard3 <> PlayerCard3 Then
                     ComPic3.Image = Cards(ComCard3)
-                    Dim C3 As Integer = (ComCard3 + 1) Mod 9
-
-                    If C1 = 0 AndAlso C2 <> 0 AndAlso C3 <> 0 Then
-                        ComTotal = (9 + C2 + C3) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
-                        ComTotal = (C1 + 9 + C3) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
-                        ComTotal = (C1 + C2 + 9) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
-                        ComTotal = (9 + 9 + C3) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
-                        ComTotal = (9 + C2 + 9) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
-                        ComTotal = (C1 + 9 + 9) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
-                        ComTotal = (9 + 9 + 9) Mod 10
-                    Else
-                        ComTotal = (C1 + C2 + C3) Mod 10
-                    End If
+                    ComTotal = (ComCard1 + ComCard2 + ComCard3 + 3) Mod 10
                     Exit Do
                 End If
             Loop
@@ -239,30 +181,8 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         Carat.Visible = False
         Pass.Visible = False
 
-        Dim P1 As Integer = (PlayerCard1 + 1) Mod 9
-        Dim P2 As Integer = (PlayerCard2 + 1) Mod 9
-        Dim C1 As Integer = (ComCard1 + 1) Mod 9
-        Dim C2 As Integer = (ComCard2 + 1) Mod 9
-
-        If P1 = 0 AndAlso P2 <> 0 Then
-            PlayerTotal = (9 + P2) Mod 10
-        ElseIf P1 <> 0 AndAlso P2 = 0 Then
-            PlayerTotal = (P1 + 9) Mod 10
-        ElseIf P1 = 0 AndAlso P2 = 0 Then
-            PlayerTotal = (9 + 9) Mod 10
-        Else
-            PlayerTotal = (P1 + P2) Mod 10
-        End If
-
-        If C1 = 0 AndAlso C2 <> 0 Then
-            ComTotal = (9 + C2) Mod 10
-        ElseIf C1 <> 0 AndAlso C2 = 0 Then
-            ComTotal = (C1 + 9) Mod 10
-        ElseIf C1 = 0 AndAlso C2 = 0 Then
-            ComTotal = (9 + 9) Mod 10
-        Else
-            ComTotal = (C1 + C2) Mod 10
-        End If
+        PlayerTotal = (PlayerCard1 + PlayerCard2 + 2) Mod 10
+        ComTotal = (ComCard1 + ComCard2 + 2) Mod 10
 
         'If Player (2 Card) = 9 Then Auto Win
         If PlayerTotal = 9 AndAlso ComTotal <> 9 Then
@@ -289,31 +209,14 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
             PlayerTotal = 9
             Result.Enabled = True
             Return
-        ElseIf ComTotal < PlayerTotal OrElse ComTotal < 6 Then
+        ElseIf (ComTotal <= PlayerTotal AndAlso ComTotal <> 9) OrElse ComTotal < 6 Then
             My.Computer.Audio.Play(My.Resources.CardFlip, AudioPlayMode.WaitToComplete)
             Do While True
-                ComCard3 = Rand.Next(0, 36)
+                ComCard3 = Rand.Next(0, 40)
+
                 If ComCard3 <> ComCard1 AndAlso ComCard3 <> ComCard2 AndAlso ComCard3 <> PlayerCard1 AndAlso ComCard3 <> PlayerCard2 Then
                     ComPic3.Image = Cards(ComCard3)
-                    Dim C3 As Integer = (ComCard3 + 1) Mod 9
-
-                    If C1 = 0 AndAlso C2 <> 0 AndAlso C3 <> 0 Then
-                        ComTotal = (9 + C2 + C3) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
-                        ComTotal = (C1 + 9 + C3) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
-                        ComTotal = (C1 + C2 + 9) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 <> 0 Then
-                        ComTotal = (9 + 9 + C3) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 <> 0 AndAlso C3 = 0 Then
-                        ComTotal = (9 + C2 + 9) Mod 10
-                    ElseIf C1 <> 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
-                        ComTotal = (C1 + 9 + 9) Mod 10
-                    ElseIf C1 = 0 AndAlso C2 = 0 AndAlso C3 = 0 Then
-                        ComTotal = (9 + 9 + 9) Mod 10
-                    Else
-                        ComTotal = (C1 + C2 + C3) Mod 10
-                    End If
+                    ComTotal = (ComCard1 + ComCard2 + ComCard3 + 3) Mod 10
                     Exit Do
                 End If
             Loop
