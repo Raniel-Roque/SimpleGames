@@ -127,7 +127,6 @@ Partial Class Lottery
         '
         'Spinning
         '
-        Me.Spinning.Interval = 300
         '
         'Slot1
         '

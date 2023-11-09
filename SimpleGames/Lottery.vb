@@ -2,7 +2,7 @@
 Public Class Lottery
     'Programmer: Raniel Christian Roque
     'BSIT - 2A
-    'Date: October 22 202
+    'Date: October 22 2023
     Dim Rand As New Random()
     Dim SpinCount As Integer
     Dim Slot1Final, Slot2Final, Slot3Final As Integer
@@ -84,7 +84,7 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         My.Computer.Audio.Stop()
         My.Computer.Audio.Play(My.Resources.Spin, AudioPlayMode.WaitToComplete)
     End Sub
-
+    Dim TemporaryNum As Integer
     Private Sub Spinning_Tick(sender As Object, e As EventArgs) Handles Spinning.Tick
         'Checks Iteration For Spinning Lotter
         'If 8, 16 or 25 then audio plays and stop respectively
@@ -93,25 +93,51 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
         End If
 
         If SpinCount <= 8 Then
-            Slot1Final = Rand.Next(0, 7)
-            Dim SlotImage1 As String = "Lottery_" & Slot1Final
-            Slot1.Image = My.Resources.ResourceManager.GetObject(SlotImage1)
+            If TemporaryNum <> Nothing Then
+                TemporaryNum = Slot1Final
+            End If
+
+            Do While True
+                Slot1Final = Rand.Next(0, 7)
+
+                If Slot1Final <> TemporaryNum Then
+                    Dim SlotImage1 As String = "Lottery_" & Slot1Final
+                    Slot1.Image = My.Resources.ResourceManager.GetObject(SlotImage1)
+                    Exit Do
+                End If
+            Loop
         End If
 
         If SpinCount <= 16 Then
-            Slot2Final = Rand.Next(0, 7)
-            Dim SlotImage2 As String = "Lottery_" & Slot2Final
-            Slot2.Image = My.Resources.ResourceManager.GetObject(SlotImage2)
+            TemporaryNum = Slot2Final
+
+            Do While True
+                Slot2Final = Rand.Next(0, 7)
+
+                If Slot2Final <> TemporaryNum Then
+                    Dim SlotImage2 As String = "Lottery_" & Slot2Final
+                    Slot2.Image = My.Resources.ResourceManager.GetObject(SlotImage2)
+                    Exit Do
+                End If
+            Loop
         End If
 
         If SpinCount <= 24 Then
-            Slot3Final = Rand.Next(0, 7)
-            Dim SlotImage3 As String = "Lottery_" & Slot3Final
-            Slot3.Image = My.Resources.ResourceManager.GetObject(SlotImage3)
+            TemporaryNum = Slot3Final
+
+            Do While True
+                Slot3Final = Rand.Next(0, 7)
+
+                If Slot3Final <> TemporaryNum Then
+                    Dim SlotImage3 As String = "Lottery_" & Slot3Final
+                    Slot3.Image = My.Resources.ResourceManager.GetObject(SlotImage3)
+                    Exit Do
+                End If
+            Loop
         End If
 
-        'Plays when 25th for result
-        If SpinCount = 25 Then
+        'Plays when 28th for result
+        If SpinCount = 28 Then
             If Slot1Final = 6 AndAlso Slot2Final = 6 AndAlso Slot3Final = 6 Then
                 GlobalData.CashGlobal += TextBox1.Text * 25
                 My.Computer.Audio.Play(My.Resources.Jackpot, AudioPlayMode.WaitToComplete)
