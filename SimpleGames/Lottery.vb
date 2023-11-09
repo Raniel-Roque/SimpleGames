@@ -7,6 +7,7 @@ Public Class Lottery
     Dim SpinCount As Integer
     Dim Slot1Final, Slot2Final, Slot3Final As Integer
     Dim Choose_Game_Main As ChooseGame
+    Dim Help_Lottery As LotteryHelp
     Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox1.Text = "Enter Bet"
         TextBox1.ForeColor = Color.Gray
@@ -25,6 +26,10 @@ Public Class Lottery
         If result = DialogResult.Yes Then
             If Choose_Game_Main Is Nothing Then
                 Choose_Game_Main = New ChooseGame
+            End If
+
+            If Help_Lottery IsNot Nothing AndAlso Help_Lottery.Visible Then
+                Help_Lottery.Close()
             End If
             Choose_Game_Main.Show()
             Me.Close()
@@ -144,8 +149,6 @@ You can manually add more by clicking your cash balance.", "Add Cash", MessageBo
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles Help.Click
-        Dim Help_Lottery As LotteryHelp
-
         If Application.OpenForms().OfType(Of LotteryHelp)().Any() Then
             Return
         End If

@@ -16,6 +16,7 @@
         End If
     End Sub
     Private Sub ChooseGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         UpdateCashDisplay()
     End Sub
     Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
